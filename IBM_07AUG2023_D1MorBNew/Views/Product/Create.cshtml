@@ -1,7 +1,7 @@
 ﻿@model IBM_07AUG2023_D1MorBNew.Models.Product
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";  
 }
 
 <!DOCTYPE html>
@@ -9,7 +9,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Create</title>
+    <title>Product - Create</title>
 </head>
 <body>
 
@@ -32,14 +32,12 @@
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
+                    <a asp-action="Index" class="btn btn-info">Back to List</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 </body>
 </html>

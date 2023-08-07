@@ -40,6 +40,12 @@ namespace IBM_07AUG2023_D1MorBNew.Controllers
             }
         }
 
+        public ActionResult Details(int id)
+        {
+            ctx.GetProductByID(id);
+            return View(ctx.GetProductByID(id));
+        }
+
         // GET: ProductController/Edit/5
         public ActionResult Edit(int id)
         {
@@ -65,7 +71,8 @@ namespace IBM_07AUG2023_D1MorBNew.Controllers
         // GET: ProductController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+
+            return View(ctx.GetProductByID(id));
         }
 
         // POST: ProductController/Delete/5
