@@ -43,15 +43,17 @@ namespace IBM_07AUG2023_D1MorBNew.Controllers
         // GET: ProductController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            ctx.GetProductByID(id);
+            return View(ctx.GetProductByID(id));
         }
 
         // POST: ProductController/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, Models.Product product)
         {
             try
             {
+                ctx.UpdateProduct(id, product);
                 return RedirectToAction(nameof(Index));
             }
             catch
