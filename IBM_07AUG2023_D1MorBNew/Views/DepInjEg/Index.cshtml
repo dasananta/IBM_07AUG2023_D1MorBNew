@@ -1,0 +1,48 @@
+﻿
+@{
+    Layout = null;
+}
+
+@inject IProductLocalContext Viewdb
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+
+    <h1>Class Level Object : @ViewBag.ClassLevelObj <br>
+        Method Level Object :  @ViewBag.MethodLevelObj
+
+        @{
+
+            foreach (var item in Viewdb.GetAllProducts())
+            {
+                            <h3>
+                            @item.ProductName
+                            
+                            </h3>
+            }
+            
+            
+            
+            
+        }
+        
+        
+      
+        
+
+
+    </h1>
+
+    
+
+
+
+</body>
+</html>

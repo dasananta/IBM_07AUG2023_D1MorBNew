@@ -7,6 +7,18 @@ namespace IBM_07AUG2023_D1MorBNew
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+
+            builder.Services.AddScoped<Models.IBM7AUG2023MorBatNGDbContext>();  
+
+         builder.Services.AddScoped( typeof( Models.IProductLocalContext),typeof(Models.ProductLocalContext)  );
+
+            
+ builder.Services.AddSingleton(  typeof( Models.IProductLocalContext) ,(sp) => {
+     
+     
+     return new Models.ProductLocalContext();   }  );
+
+
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
@@ -24,7 +36,7 @@ namespace IBM_07AUG2023_D1MorBNew
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=modelbindereg}/{action=Index}/{id?}");
+                pattern: "{controller=Course}/{action=Index}/{id?}");
 
             app.Run();
         }
