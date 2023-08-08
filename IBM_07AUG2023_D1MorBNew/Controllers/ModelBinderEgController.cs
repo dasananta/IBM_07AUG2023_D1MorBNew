@@ -6,7 +6,7 @@ namespace IBM_07AUG2023_D1MorBNew.Controllers
     {
         public IActionResult Default(int id, string EmpName)
         {
-            return Content($"by-Default: {id}");
+            return Content($"by-Default: {id} - {EmpName}");
         }
 
         // Bind: query  
