@@ -24,7 +24,7 @@ namespace IBM_07AUG2023_D1MorBNew
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Product}/{action=Index}/{id?}");
+                pattern: "{controller=modelbindereg}/{action=Index}/{id?}");
 
             app.Run();
         }
